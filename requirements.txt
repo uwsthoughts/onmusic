@@ -2,4 +2,4 @@ matplotlib
 pandas
 google-cloud-storage
 google-auth
-plotly.express
+plotly
