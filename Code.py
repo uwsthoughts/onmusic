@@ -7,36 +7,38 @@ from google.oauth2 import service_account
 from io import BytesIO
 
 
-col1, col2 = st.columns([2, 3])  # Adjust the ratio to control the space each column takes
+st.title("My First Python Project: Understanding Beatport Music Trends")
 
-with col1:
-    st.write("""
-    ### My First Python Deployment: A Review of Beatport Music Data
+# Main text content
+st.write("""
+This is my first Python project, which is focused on the the discovery phase of working with a new dataset. This shows some initial ideas I had about the data and includes commentary on why it does or doesn't work. The goal is for a bit a radical 
+transparency around how I think through a new data project and what does and doesn't matter to me. As I learn more Python and start getting into machine learning and neural network components, my approach will evolve.
 
-    This is my first Python project, which is building towards a machine learning project that uses music data from Beatport and Spotify to predict future trends. Initial web deployment is on a Streamlit app. It will all be migrated in the next few weeks to a custom website I’m having built.
+Questions or comments about what I'm doing here? You can email me at kevin@uwsthoughts.com
 
-    ### Why Beatport and Spotify music data? Don’t you work in advertising?
-    A few reasons for this:
-    - I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials.
-      - Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
-    - I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
-      - 3am with me
-      - 3am at the rave
-      - 3am at Mayan Warrior
-      - 3am at a beach party
+### Why Beatport and Spotify music data? Don’t you work in advertising?
+A few reasons for this:
+- I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials. 
+   - Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
+- I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
+   - [3am with me:
+   - [3am at the rave]
+   - [3am at Mayan Warrior]
+   - [3am at a beach party]]
+""")
 
-    - I work for the Walt Disney Company so I wanted a dataset and project that would keep me clear of the actual existence or appearance of a conflict of interest. Disney is a big company but it doesn’t compete with Beatport or Spotify.
-      - That said: the opinions expressed here are my own.
-    """)
+# Embed the Spotify playlist iframe
+components.html(
+    """
+    <iframe src="https://open.spotify.com/embed/playlist/1AuETx4UiJIrlbCFLNfCtX" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    """,
+    height=400
+)
 
-with col2:
-    # Embed the Spotify playlist iframe
-    components.html(
-        """
-        <iframe src="https://open.spotify.com/embed/playlist/1AuETx4UiJIrlbCFLNfCtX" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        """,
-        height=400
-    )
+st.write("""
+- I work for the Walt Disney Company so I wanted a dataset and project that would keep me clear of the actual existence or appearance of a conflict of interest. Disney is a big company but it doesn’t compete with Beatport or Spotify. 
+   - That said: the opinions expressed here are my own.
+""")
 
 # Create an expander for additional content
 with st.expander("Reference links"):
