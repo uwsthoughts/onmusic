@@ -1,3 +1,4 @@
 matplotlib
 pandas
 google.cloud
+google.oauth2
