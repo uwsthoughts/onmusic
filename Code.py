@@ -77,4 +77,8 @@ st.write("Average Danceability by Subgenre")
 plot_data(dance_subgenres, selected_dance_subgenres, "Danceability")
 
 st.write("Average Energy by Subgenre")
-plot_data(energy_subgenres, selected_
+plot_data(energy_subgenres, selected_energy_subgenres, "Energy")
+
+st.write("Average Danceability by Record Label")
+plot_data(labels, selected_labels, "Danceability")
+
