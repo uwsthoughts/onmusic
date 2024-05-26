@@ -11,14 +11,13 @@ st.title('My First Python Deployment: A Review of Beatport Music Data')
 gcp_credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
 client = storage.Client(credentials=gcp_credentials)
 
-# Function to read CSV from Google Cloud Storage
+#read CSV from gcp
 def read_gcs_csv(bucket_name, file_name):
     bucket = client.get_bucket(bucket_name)
     blob = bucket.blob(file_name)
     data = blob.download_as_bytes()
     return pd.read_csv(BytesIO(data))
 
-# Specify your Google Cloud Storage bucket and file names
 bucket_name = 'love-uwsthoughts'
 file_names = {
     'agg_dance_sbg_avg': 'agg_dance_sbg_avg.csv',
@@ -31,11 +30,11 @@ agg_dance_sbg_avg = read_gcs_csv(bucket_name, file_names['agg_dance_sbg_avg'])
 agg_label_eng_dan_avg = read_gcs_csv(bucket_name, file_names['agg_label_eng_dan_avg'])
 agg_sbg_eng_avg = read_gcs_csv(bucket_name, file_names['agg_sbg_eng_avg'])
 
-# Ensure 'year' column is treated as an integer
+#handle year 
 for df in [agg_dance_sbg_avg, agg_label_eng_dan_avg, agg_sbg_eng_avg]:
     df['year'] = df['year'].astype(int)
 
-# Ensure relevant columns are numeric
+#number check
 def ensure_numeric(df, columns):
     for col in columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -56,7 +55,7 @@ default_dance_subgenres = ['Melodic Techno', 'Tropical House', 'Organic House']
 default_energy_subgenres = ['Melodic Techno', 'Tropical House', 'Organic House']
 default_labels_dance_energy = ['Afterlife Records', 'Anjunadeep', 'All Day I Dream']
 
-# Filter default selections to ensure they exist in the options
+# Filter defaults to ensure they exist 
 available_dance_subgenres = danceability_by_subgenre.columns
 available_energy_subgenres = energy_by_subgenre.columns
 available_labels = danceability_by_label.columns
