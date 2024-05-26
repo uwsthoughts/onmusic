@@ -27,7 +27,7 @@ A few reasons for this:
    - [3am at a beach party]]
 """)
 
-# Embed the Spotify playlist iframe
+# Spotify embed
 components.html(
     """
     <iframe src="https://open.spotify.com/embed/playlist/1AuETx4UiJIrlbCFLNfCtX" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -40,7 +40,7 @@ st.write("""
    - That said: the opinions expressed here are my own.
 """)
 
-# Create an expander for additional content
+# Intro expander
 with st.expander("Reference links"):
     st.write("""
     **Sources:**
@@ -58,11 +58,11 @@ with st.expander("Reference links"):
     - [What do the audio features mean?](https://help.spotontrack.com/article/what-do-the-audio-features-mean)
     """)
 
-#gcp setup
+#gcp setup and read data
 credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
 client = storage.Client(credentials=credentials)
 
-# Function to read CSV from Google Cloud Storage
+@st.cache_data(ttl=None)
 def read_gcs_csv(bucket_name, file_name):
     data = client.bucket(bucket_name).blob(file_name).download_as_bytes()
     df = pd.read_csv(BytesIO(data))
@@ -84,7 +84,7 @@ energy_subgenres = data['energy'].pivot(index='year', columns='subgenre_name', v
 dance_labels = data['label'].pivot(index='year', columns='label_name', values='danceability')
 energy_labels = data['label'].pivot(index='year', columns='label_name', values='energy')
 
-# Filter selections based on available data
+# Filter selections
 default_options = {'dance_subgenres': ['Melodic Techno', 'Tropical House', 'Organic House'], 'energy_subgenres': ['Melodic Techno', 'Tropical House', 'Organic House'], 'labels': ['Afterlife Records', 'Anjunadeep', 'All Day I Dream']}
 available_options = {key: list(data.columns) for key, data in zip(default_options, [dance_subgenres, energy_subgenres, dance_labels])}
 selected_options = {key: [x for x in default_options[key] if x in available_options[key]] for key in default_options}
