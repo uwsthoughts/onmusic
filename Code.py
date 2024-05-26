@@ -85,10 +85,10 @@ selected_labels_dance_energy = st.sidebar.multiselect(
 )
 
 #radar chart
-recent_data = agg_label_eng_dan_avg[agg_label_eng_dan_avg['year'] == agg_label_eng_dan_avg['year'].max()]
+recent_data = agg_label_eng_dan_avg[agg_label_eng_dan_avg['year'] == agg_dance_sbg_avg['year'].max()]
 recent_data = recent_data[['subgenre_name', 'danceability', 'energy']]
-radar_data = recent_data.melt(id_vars=['subgenre_name'], var_name='metric', value_name='value')
-fig = px.line_polar(radar_data, r='value', theta='metric', color='subgenre_name', line_close=True,
+radar_data = recent_data.melt(id_vars=['label_name'], var_name='metric', value_name='value')
+fig = px.line_polar(radar_data, r='value', theta='metric', color='label_name', line_close=True,
 title="Comparison of Danceability and Energy Across Subgenres")
 st.plotly_chart(fig)
 
