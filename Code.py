@@ -40,10 +40,16 @@ st.write("""
    - That said: the opinions expressed here are my own.
 """)
 
-# Intro expander
-with st.expander("Reference links"):
+with st.expander("Project Overview and Next Steps"):
     st.write("""
-    **Sources:**
+	**Overview:**
+	This first release is presenting ideas "as-is" to bring transparency to 	the flow of experiemting with ideas that turn out to good or bad. All 		charts are discovery first-drafts so minimal effort has been focused on 	things like making "label_name" be "Label Name" instead. That's really a 	last mile change for when your product is going into the wild as a final 	product. 
+	
+	This early on, I'm focused on what the data looks like and shaping 		future ideas to test out. Danceability by subgenre? Maybe not as 			interesting as I thought it could be. By label? Worth getting into more. 	Things like that.
+
+All charts have a "Commentary" dropdown where you can read my thoughts and potential ideas.
+
+**Sources:**
     I used this dataset from Kaggle:
     - [10M Beatport tracks & Spotify audio features](https://www.kaggle.com/datasets/mcfurland/10-m-beatport-tracks-spotify-audio-features)
 
@@ -56,6 +62,10 @@ with st.expander("Reference links"):
 
     A one-sheet with definitions can be found here:
     - [What do the audio features mean?](https://help.spotontrack.com/article/what-do-the-audio-features-mean)
+
+	**Next steps:**
+	- This Streamlit site will have a short life as I'm standing up a custom 	website that better reflects how I want to do things. That's coming in 	the next few weeks so this site here is more or less out of the box.
+ 
     """)
 
 #gcp setup and read data
@@ -100,6 +110,24 @@ heatmap_data = recent_data.melt(id_vars='label_name', var_name='metric', value_n
 heatmap = heatmap_data.pivot(index='label_name', columns='metric', values='value')
 st.plotly_chart(px.imshow(heatmap, aspect='auto', title="Heatmap of Danceability and Energy for Most Recent Year"))
 
+with st.expander("Commentary"):
+    st.write("""
+
+OK, well, this is not very helpful, is it? It has a lot of noise because there’s no filter on it. Maybe that would make it a bit bitter. 
+But what would this heat map even tell me that’s valuable? I saw it as an option in the documentation and thought “oh that could be cool” and, well, I was wrong. 
+
+This brings me to the original sin of a ton of data visualizations I see: too much effort into making it look nice and minimal thought 
+into effectively and efficiently conveying the data. If your chart requires an explanation beyond what the underlying data is then you’ve done it wrong. Assuming the reader generally knows the data, they should be able to understand the chart without you in the room. If they can’t: you’ve done it wrong. Often times, data can be effectively conveyed in two written sentences. 
+
+Which brings me to another sin: PowerPoint presentations for data (or in general). They create a dynamic where someone is 
+just talking at you for a while and creates no space for a conversation. The chart they don’t want you to see? In the appendix, 
+if there at all. The question you should ask yourself when someone is giving a PowerPoint presentation is: what are they not telling 
+me and what are their motives for not telling me? 
+	
+
+"""
+)
+
 # Plot data with filters applied
 def plot_bar(data_pivot, selected, title, y_axis):
     if selected:
@@ -118,11 +146,72 @@ def plot_scatter(data_pivot, selected, title, y_axis):
 st.write("Average Danceability by Subgenre")
 plot_bar(dance_subgenres, selected_dance_subgenres, "Average Danceability by Subgenre", "Danceability")
 
+with st.expander("Commentary"):
+    st.write("""
+
+This one is visually pretty but still not telling a whole lot. The Y-axis should have another decimal place for sure. These 
+subgenres aren't changing as much as I expected over time. Is it the way the metric is calculated or have these subgenres really not changed? 
+
+This brings me to another place where people go wrong with data: accepting the premise of the data in front of you. 
+One of my first questions when I see a metric like danceability (as defined by Spotify) is: how exactly is this being defined? 
+If all songs from a certain label or certain artists are automatically assigned a certain value then you can have data that looks like this.
+
+You should question how the numbers in front of you came together before questioning what they show. This exercise will help you separate 
+the BS metrics from the valuable ones and let you assigned your own weight to them. Just because someone says a metric is valuable doesn't mean 
+it actually is.
+
+"""
+)
+
 st.write("Average Energy by Subgenre")
 plot_scatter(energy_subgenres, selected_energy_subgenres, "Average Energy by Subgenre", "Energy")
+
+with st.expander("Commentary"):
+    st.write("""
+
+This suffers from the same underlying issues as the bar charts above, except also less interesting to look at. The data isn't 
+changing much and this could be summarized in one written sentence with a support data table for reference.
+
+"""
+)
 
 st.write("Average Danceability by Record Label")
 plot_bar(dance_labels, selected_labels, "Average Danceability by Record Label", "Danceability")
 
+with st.expander("Commentary"):
+    st.write("""
+
+Now this is pretty interesting. There's more variatation across the years for different labels, which speaks to trends within 
+the music they're putting out. I would be interested to see data like this alongside how many people are listening to their music 
+over time to see if there's a relatonship between popularity and degrading danceability. I'm going to see if there's a way to bring in 
+Beatport or Spotify listening metrics. 
+
+Still, conveying drops as just raw points instead of creating a contextual reference of some sort ("this is a drop of 10%") makes 
+it difficult to assess true value. Is it statistically significant? Worthy of digging into more. Also worth seeing the trends by artists 
+within these labels to see if there's something going on there. Not sure what I'm after on that front. Maybe the arrival or departure of a 
+popular aritst changes things?
+
+"""
+)
+
 st.write("Average Energy by Record Label")
 plot_scatter(energy_labels, selected_labels, "Average Energy by Record Label", "Energy")
+
+with st.expander("Commentary"):
+    st.write("""
+
+This is supposed to be a scatterplot, which isn't working that great with a filter on it. Scatterplots are less about specific data points and more 
+about the trend of ostensibly similar datapoints. This is where I would like to see song-level trends for labels to see if that hunch is true or not. 
+If there was a shift in a specific time frame, I can focus in on what happened in that window to drive it.
+
+This leads me to my final point: data projects will always have periods of expanding and narrowing scope. You have a hunch, you chase it for a bit, it 
+either works out or you go in a different direction. Moving linearally from A to Z without repeating some letters means you probably missed something. 
+You should be in pursuit of truth, regardless of whether it confirms or dislodges your previously held beliefs. 
+
+If you live in a massive vortex of delusion where you are right and everyone else just doesn't get it, the quality of your work will ienvtiably decline. 
+It's hard to think of an effective search for truth and understanding that didn't involve being wrong a few times along the way. 
+
+If you're afraid to have your ideas or assumptions challenged on the merits, my question is: why? 
+
+"""
+)
