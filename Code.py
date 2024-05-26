@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 from google.cloud import storage
 from google.oauth2 import service_account
 from io import BytesIO
@@ -7,11 +8,11 @@ from io import BytesIO
 # Streamlit title
 st.title('My First Python Deployment: A Review of Beatport Music Data')
 
-# Use Streamlit secrets to access Google Cloud Storage
+# google gloud work 
 gcp_credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
 client = storage.Client(credentials=gcp_credentials)
 
-#read CSV from gcp
+#read gcp data 
 def read_gcs_csv(bucket_name, file_name):
     bucket = client.get_bucket(bucket_name)
     blob = bucket.blob(file_name)
@@ -82,6 +83,14 @@ selected_labels_dance_energy = st.sidebar.multiselect(
     options=available_labels,
     default=default_labels_dance_energy
 )
+
+#radar chart
+recent_data = agg_label_eng_dan_avg[agg_label_eng_dan_avg['year'] == agg_label_eng_dan_avg['year'].max()]
+recent_data = recent_data[['subgenre_name', 'danceability', 'energy']]
+radar_data = recent_data.melt(id_vars=['subgenre_name'], var_name='metric', value_name='value')
+fig = px.line_polar(radar_data, r='value', theta='metric', color='subgenre_name', line_close=True,
+title="Comparison of Danceability and Energy Across Subgenres")
+st.plotly_chart(fig)
 
 # Plot the data with filters applied
 st.write("Average Danceability by Subgenre")
