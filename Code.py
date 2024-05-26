@@ -45,7 +45,7 @@ selected_labels = st.sidebar.multiselect('Select Labels for Danceability and Ene
 # Heatmap for recent data
 recent_data = data['label'][data['label']['year'] == data['label']['year'].max()][['label_name', 'danceability', 'energy']]
 heatmap_data = recent_data.melt(id_vars='label_name', var_name='metric', value_name='value')
-heatmap = heatmap_data.pivot('label_name', 'metric', 'value')
+heatmap = heatmap_data.pivot(index='label_name', columns='metric', values='value')
 st.plotly_chart(px.imshow(heatmap, aspect='auto', title="Heatmap of Danceability and Energy for Most Recent Year"))
 
 # Plot data with filters applied
