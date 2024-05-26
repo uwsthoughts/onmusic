@@ -2,4 +2,3 @@ matplotlib
 pandas
 google-cloud-storage
 google-auth
-google.oauth2
