@@ -5,7 +5,7 @@ from google.oauth2 import service_account
 from io import BytesIO
 
 # Streamlit title
-st.title('Data Visualization from Google Cloud Storage')
+st.title('My First Python Deployment: A Review of Beatport Music Data')
 
 # Use Streamlit secrets to access Google Cloud Storage
 gcp_credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
