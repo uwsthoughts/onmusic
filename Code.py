@@ -17,6 +17,29 @@ transparency around how I think through a new data project and what does and doe
 Questions or comments about what I'm doing here? You can email me at kevin@uwsthoughts.com
 
 ### Why Beatport and Spotify music data? Don’t you work in advertising?
+"""
+)
+with st.expander("Technical Details"):
+st.write("""
+
+**Short Term Infrastructure:**
+Short Term Infrastructure:
+initial deployment Uses GCP cloud storage with authentication via a service account that has secret keys stored in Streamlite's secret key freture. I'm avoiding options like BigQuery or MySQL databases because I'm a gurl on a budget. 
+
+I did a lot of the initial heavy lifting around joining, organizing, and cleaning the data using free compute credits I had with Google Colab. I took what was initially 11GB of data and shaped it into what is now a 3GB Beatport fact table. 
+
+I'm purposefully working with a large baseline dataset so I can figure out how to effectively move it around and use it. 
+
+**Short Term Infrastructure:**
+I am working on my preffered AWS long term infrastrucute. After a lot of research and even more trial and error, I settled on a one year paid-upfront reserved M5DN Large as the core of my long term needs: Instance memory: 8GB;Compute Units: 0; VCPUs: 2; storage: 76GB SSD; performance: 25GB.
+
+As a frame a reference, the P3 High Performance GPU Double Extra Large, which is on the cheaper end for full year reserved machine learning instances, will cost you $17,000 for one year up front. Instance memory: 32GB; compute units: 31; VCPUs: 8; GPUs: 1; Storage: EBS only; performance:up to 10GB.
+
+For those who either don't like numbers or are new to the show: $17,000 is more than $500
+
+"""
+)
+st.write("""
 A few reasons for this:
 - I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials. 
    - Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
@@ -43,11 +66,11 @@ st.write("""
 with st.expander("Technical Overview and Next Steps"):
     st.write("""
 	**Overview:**
-	This first release is presenting ideas "as-is" to bring transparency to 	the flow of experiemting with ideas that turn out to good or bad. All 		charts are discovery first-drafts so minimal effort has been focused on 	things like making "label_name" be "Label Name" instead. That's really a 	last mile change for when your product is going into the wild as a final 	product. 
+	This first release is presenting ideas "as-is" to bring transparency to 	the flow of experiemting with ideas that turn out to good or bad. All 		charts are discovery first-drafts so minimal effort has been focused on 	things like making label_name be Label Name instead. That's really a 	last mile change for when your product is going into the wild as a final 	product. 
 	
 	This early on, I'm focused on what the data looks like and shaping 		future ideas to test out. Danceability by subgenre? Maybe not as 			interesting as I thought it could be. By label? Worth getting into more. 	Things like that.
 
-All charts have a "Commentary" dropdown where you can read my thoughts and potential ideas.
+All charts have a Commentary dropdown where you can read my thoughts and potential ideas.
 
 **Technical Details:**
 Short Term Infrastructure:
