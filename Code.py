@@ -51,12 +51,6 @@ A few reasons for this:
       	[at the beach party],
         with me
        ]
-     	
-    
-    [3am with me](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
-    - [3am at the rave](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
-    - [3am at Mayan Warrior](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
-    - [3am at a beach party](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
 """)
 
 # Spotify embed
