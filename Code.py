@@ -46,7 +46,6 @@ A few reasons for this:
 - Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
 - I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
     - [ 
-     [3am with me](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
     - [3am at the rave](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
     - [3am at Mayan Warrior](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
     - [3am at a beach party](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
