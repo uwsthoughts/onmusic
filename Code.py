@@ -7,49 +7,57 @@ from google.oauth2 import service_account
 from io import BytesIO
 
 
+import streamlit as st
+import streamlit.components.v1 as components
+
 st.title("My First Python Project: Understanding Beatport Music Trends")
 
 # Main text content
 st.write("""
-This is my first Python project, which is focused on the the discovery phase of working with a new dataset. This shows some initial ideas I had about the data and includes commentary on why it does or doesn't work. The goal is for a bit a radical 
+This is my first Python project, which is focused on the discovery phase of working with a new dataset. This shows some initial ideas I had about the data and includes commentary on why it does or doesn't work. The goal is for a bit of radical 
 transparency around how I think through a new data project and what does and doesn't matter to me. As I learn more Python and start getting into machine learning and neural network components, my approach will evolve.
 
 Questions or comments about what I'm doing here? You can email me at kevin@uwsthoughts.com
 
 ### Why Beatport and Spotify music data? Don’t you work in advertising?
-"""
-)
-with st.expander("Technical Details"):
-	
-st.write("""
+""")
 
-	**Short Term Infrastructure:**
-	Short Term Infrastructure:
-	initial deployment Uses GCP cloud storage with authentication via a service account that has secret keys stored in Streamlite's secret key freture. I'm avoiding options like BigQuery or MySQL databases because I'm a gurl on a budget. 
-	
-	I did a lot of the initial heavy lifting around joining, organizing, and cleaning the data using free compute credits I had with Google Colab. I took what was initially 11GB of data and shaped it into what is now a 3GB Beatport fact table. 
-	
-	I'm purposefully working with a large baseline dataset so I can figure out how to effectively move it around and use it. 
-	
-	**Short Term Infrastructure:**
-	I am working on my preffered AWS long term infrastrucute. After a lot of research and even more trial and error, I settled on a one year paid-upfront reserved M5DN Large as the core of my long term needs: Instance memory: 8GB;Compute Units: 0; VCPUs: 2; storage: 76GB SSD; performance: 25GB.
-	
-	As a frame a reference, the P3 High Performance GPU Double Extra Large, which is on the cheaper end for full year reserved machine learning instances, will cost you $17,000 for one year up front. Instance memory: 32GB; compute units: 31; VCPUs: 8; GPUs: 1; Storage: EBS only; performance:up to 10GB.
-	
-	For those who either don't like numbers or are new to the show: $17,000 is more than $500
-	
-	"""
-)
+with st.expander("Technical Details"):
+    st.write("""
+    **Short Term Infrastructure:**
+    Short Term Infrastructure:
+    Initial deployment uses GCP cloud storage with authentication via a service account that has secret keys stored in Streamlit's secret key feature. I'm avoiding options like BigQuery or MySQL databases because I'm on a budget. 
+    
+    I did a lot of the initial heavy lifting around joining, organizing, and cleaning the data using free compute credits I had with Google Colab. I took what was initially 11GB of data and shaped it into what is now a 3GB Beatport fact table. 
+    
+    I'm purposefully working with a large baseline dataset so I can figure out how to effectively move it around and use it. 
+    
+    **Long Term Infrastructure:**
+    I am working on my preferred AWS long term infrastructure. After a lot of research and even more trial and error, I settled on a one year paid-upfront reserved M5DN Large as the core of my long term needs: Instance memory: 8GB; Compute Units: 0; VCPUs: 2; storage: 76GB SSD; performance: 25GB.
+    
+    As a frame of reference, the P3 High Performance GPU Double Extra Large, which is on the cheaper end for full year reserved machine learning instances, will cost you $17,000 for one year up front. Instance memory: 32GB; compute units: 31; VCPUs: 8; GPUs: 1; Storage: EBS only; performance: up to 10GB.
+    
+    For those who either don't like numbers or are new to the show: $17,000 is more than $500
+    """)
+
 st.write("""
-	A few reasons for this:
-	- I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials. 
-	- Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
-	- I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
-	- [3am with me:
-	- [3am at the rave]
-	- [3am at Mayan Warrior]
-	- [3am at a beach party]]
-	""")
+A few reasons for this:
+- I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube Premium so I can watch DJ music sets without commercials. 
+- Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
+- I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
+    - [ 
+    	[at the rave],
+     	[at Mayan Warrior],
+      	[at the beach party],
+        with me
+       ]
+     	
+    
+    [3am with me](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
+    - [3am at the rave](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
+    - [3am at Mayan Warrior](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
+    - [3am at a beach party](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
+""")
 
 # Spotify embed
 components.html(
@@ -66,32 +74,29 @@ st.write("""
 
 with st.expander("Technical Overview and Next Steps"):
     st.write("""
-	**Overview:**
-	This first release is presenting ideas "as-is" to bring transparency to 	the flow of experiemting with ideas that turn out to good or bad. All 		charts are discovery first-drafts so minimal effort has been focused on 	things like making label_name be Label Name instead. That's really a 	last mile change for when your product is going into the wild as a final 	product. 
-	
-	This early on, I'm focused on what the data looks like and shaping 		future ideas to test out. Danceability by subgenre? Maybe not as 			interesting as I thought it could be. By label? Worth getting into more. 	Things like that.
+    **Overview:**
+    This first release is presenting ideas "as-is" to bring transparency to the flow of experimenting with ideas that turn out to be good or bad. All charts are discovery first-drafts so minimal effort has been focused on things like making label_name be Label Name instead. That's really a last mile change for when your product is going into the wild as a final product. 
+    
+    This early on, I'm focused on what the data looks like and shaping future ideas to test out. Danceability by subgenre? Maybe not as interesting as I thought it could be. By label? Worth getting into more. Things like that.
 
-All charts have a Commentary dropdown where you can read my thoughts and potential ideas.
+    All charts have a Commentary dropdown where you can read my thoughts and potential ideas.
 
-**Technical Details:**
-Short Term Infrastructure:
-initial deployment Uses GCP cloud storage with authentication via a service account that has secret keys stored in Streamlite's secret key freture. I'm avoiding options like BigQuery or MySQL databases because I'm a gurl on a budget. 
+    **Technical Details:**
+    Short Term Infrastructure:
+    Initial deployment uses GCP cloud storage with authentication via a service account that has secret keys stored in Streamlit's secret key feature. I'm avoiding options like BigQuery or MySQL databases because I'm on a budget. 
 
-I did a lot of the initial heavy lifting around joining, organizing, and cleaning the data using free compute credits I had with Google Colab. I took what was initially 11GB of data and shaped it into what is now a 3GB Beatport fact table. 
+    I did a lot of the initial heavy lifting around joining, organizing, and cleaning the data using free compute credits I had with Google Colab. I took what was initially 11GB of data and shaped it into what is now a 3GB Beatport fact table. 
 
-I'm purposefully working with a large baseline dataset so I can figure out how to effectively move it around and use it. 
+    I'm purposefully working with a large baseline dataset so I can figure out how to effectively move it around and use it. 
 
-**Long Term Infrastructure:**
-I am working on my preffered AWS long term infrastrucute. After a lot of research and even more trial and error, I settled on a one 
-year paid-upfront reserved M5DN Large as the core of my long term needs: Instance memory: 8GB;Compute Units: 0; VCPUs: 2; storage: 76GB SSD; performance: 25GB.
+    **Long Term Infrastructure:**
+    I am working on my preferred AWS long term infrastructure. After a lot of research and even more trial and error, I settled on a one year paid-upfront reserved M5DN Large as the core of my long term needs: Instance memory: 8GB; Compute Units: 0; VCPUs: 2; storage: 76GB SSD; performance: 25GB.
 
-As a frame a reference, the P3 High Performance GPU Double Extra Large, which is on the cheaper end for full year reserved machine learning instances, 
-will cost you $17,000 for one year up front. Instance memory: 32GB; compute units: 31; VCPUs: 8; GPUs: 1; Storage: EBS only; performance:up to 10GB.
+    As a frame of reference, the P3 High Performance GPU Double Extra Large, which is on the cheaper end for full year reserved machine learning instances, will cost you $17,000 for one year up front. Instance memory: 32GB; compute units: 31; VCPUs: 8; GPUs: 1; Storage: EBS only; performance: up to 10GB.
 
-For those who either don't like numbers or are new to the show: $17,000 is more than $500
+    For those who either don't like numbers or are new to the show: $17,000 is more than $500
 
-
-**Data Sources:**
+    **Data Sources:**
     I used this dataset from Kaggle:
     - [10M Beatport tracks & Spotify audio features](https://www.kaggle.com/datasets/mcfurland/10-m-beatport-tracks-spotify-audio-features)
 
@@ -105,10 +110,10 @@ For those who either don't like numbers or are new to the show: $17,000 is more 
     A one-sheet with definitions can be found here:
     - [What do the audio features mean?](https://help.spotontrack.com/article/what-do-the-audio-features-mean)
 
-	**Next steps:**
-	- This Streamlit site will have a short life as I'm standing up a custom 	website that better reflects how I want to do things. That's coming in 	the next few weeks so this site here is more or less out of the box.
- 
+    **Next steps:**
+    - This Streamlit site will have a short life as I'm standing up a custom website that better reflects how I want to do things. That's coming in the next few weeks so this site here is more or less out of the box.
     """)
+
 
 #gcp setup and read data
 credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
