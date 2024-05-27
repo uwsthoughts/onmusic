@@ -154,7 +154,7 @@ st.plotly_chart(px.imshow(heatmap, aspect='auto', title="Heatmap of Danceability
 with st.expander("Commentary"):
     st.write("""
 
-OK, well, this is not very helpful, is it? It has a lot of noise because there’s no filter on it. Maybe that would make it a bit bitter. 
+OK, well, this is not very helpful, is it? It has a lot of noise because there’s no filter on it. Maybe that would make it a bit better. What do you do when the Hindenberg crashes into a Superfund site?
 But what would this heat map even tell me that’s valuable? I saw it as an option in the documentation and thought “oh that could be cool” and, well, I was wrong. 
 
 This brings me to the original sin of a ton of data visualizations I see: too much effort into making it look nice and minimal thought 
