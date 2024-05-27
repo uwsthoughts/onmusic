@@ -41,15 +41,15 @@ st.write("""
 	"""
 )
 st.write("""
-A few reasons for this:
-- I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials. 
-   - Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
-- I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
-   - [3am with me:
-   - [3am at the rave]
-   - [3am at Mayan Warrior]
-   - [3am at a beach party]]
-""")
+	A few reasons for this:
+	- I love house and techno music. Actually, I’m obsessed with it. The subscription I’ve had the longest is YouTube premium so I can watch DJ music sets without commercials. 
+	- Of the 170 accounts I follow on Instagram, 125 are house and techno artists, labels, promoters, or venues. NGL - I think I’ve muted everyone else #savage 
+	- I was talking to someone recently and they were telling me about a project they did around working with students to convey how they feel through music playlists. That inspired me to make this playlist, which is designed as three distinct playlists representing different styles of house and techno I love that all roll up into "3am with me:"
+	- [3am with me:
+	- [3am at the rave]
+	- [3am at Mayan Warrior]
+	- [3am at a beach party]]
+	""")
 
 # Spotify embed
 components.html(
