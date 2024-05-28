@@ -231,9 +231,10 @@ This leads me to my final point: data projects will always have periods of expan
 either works out or you go in a different direction. Moving from A to Z without repeating some letters means you probably missed something. 
 You should be in pursuit of truth and understanding, regardless of whether it confirms or dislodges your previously held beliefs. 
 
-If you believe you are always right and everyone else just doesn't get it, the quality of your work will ienvtiably decline. Being challenged on the meri
-It's hard to think of an effective search for truth and understanding that doesn't involve being wrong a few times along the way. The pursuit of truth must remain a bedrock
-of modern human society. Institutional decay begins when truth takes a backseat to convenience. 
+If you believe you are always right and everyone else just doesn't get it, the quality of your work will ienvtiably decline. Being challenged on the merits will make your final perspective
+stronger, or maybe even change it entirely. 
+It's hard to imagine an effective search for truth and understanding that doesn't involve being wrong a few times along the way. The pursuit of truth must remain a bedrock
+of modern human society, for institutional decay begins when truth takes a backseat to convenience. 
 
 """
 )
