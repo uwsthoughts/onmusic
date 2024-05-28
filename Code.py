@@ -89,8 +89,12 @@ with st.expander("Documentation and Next Steps"):
     - [What do the audio features mean?](https://help.spotontrack.com/article/what-do-the-audio-features-mean)
 
     **Next steps:**
-    - This Streamlit site will have a short life as I'm standing up a custom website that better reflects how I want to do things. That's coming in the next few weeks so this site here is more or less out of the box.
+    - This Streamlit site will have a short life as I'm standing up a custom website that better reflects how I want to do things. 
+    That's coming in the next few weeks so this site here is more or less out of the box.
+    -My goal is to start a 4-5 month training of Meta’s Llama 2 or 3 model in the Fall that can form the core of my masters thesis in spring 2025. 
+        -Additionally, I want to build my own small neural network so I can better understand them from the ground up.
     """)
+    
 
 
 #gcp setup and read data
