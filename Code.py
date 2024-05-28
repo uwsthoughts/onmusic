@@ -53,7 +53,13 @@ A few reasons for this:
     - [3am at a beach party](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
       [3am with me](https://open.spotify.com/playlist/1AuETx4UiJIrlbCFLNfCtX)
       ]
-""")
+
+      [
+      	[At the rave]
+        [At Mayan Warrior]
+	[At a beach party]
+      with me]
+""") 
 
 # Spotify embed
 components.html(
