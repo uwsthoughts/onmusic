@@ -145,15 +145,13 @@ with st.expander("Commentary"):
 OK, well, this is not very helpful, is it? It has a lot of noise because there’s no filter on it. Maybe that would make it a bit better. What do you do when the Hindenberg crashes into a Superfund site?
 But what would this heat map even tell me that’s valuable? I saw it as an option in the documentation and thought “oh that could be cool” and, well, I was wrong. 
 
-This brings me to the original sin of a ton of data visualizations I see: too much effort into making it look nice and minimal thought 
-into effectively and efficiently conveying the data. If your chart requires an explanation beyond what the underlying data is then you’ve done it wrong. Assuming the reader generally knows the data, they should be able to understand the chart without you in the room. If they can’t: you’ve done it wrong. Often times, data can be effectively conveyed in two written sentences. 
+This brings me to the original sin of a ton of data visualizations I see: too much effort into making them look nice and minimal thought 
+into effectively and efficiently conveying the data. I aim for a visualization that doesn't require a voiceover explanation since there's a significant chance someone will review it without me around.
 
-Which brings me to another sin: PowerPoint presentations for data (or in general). They create a dynamic where someone is 
-just talking at you for a while and creates no space for a conversation. The chart they don’t want you to see? In the appendix, 
-if there at all. The question you should ask yourself when someone is giving a PowerPoint presentation is: what are they not telling 
-me and what are their motives for not telling me? 
-	
-
+A few bad things to be on guard for:
+ - X and Y axis on graph that seem out of proportion with what you're looking for. This has the effect of minimizing or dramatizing particular patterns. Sometimes, this is used for good and people are
+ trying to make it easier to see what's going on. Sometimes, and more often than you might think, this is done to warp the data to hide something unflattering. 
+ 
 """
 )
 
@@ -180,10 +178,6 @@ with st.expander("Commentary"):
 
 This one is visually pretty but still not telling a whole lot. The Y-axis should have another decimal place for sure. These 
 subgenres aren't changing as much as I expected over time. Is it the way the metric is calculated or have these subgenres really not changed? 
-
-This brings me to another place where people go wrong with data: accepting the premise of the data in front of you. 
-One of my first questions when I see a metric like danceability (as defined by Spotify) is: how exactly is this being defined? 
-If all songs from a certain label or certain artists are automatically assigned a certain value then you can have data that looks like this.
 
 You should question how the numbers in front of you came together before questioning what they show. This exercise will help you separate 
 the BS metrics from the valuable ones and let you assigned your own weight to them. Just because someone says a metric is valuable doesn't mean 
@@ -234,13 +228,12 @@ about the trend of ostensibly similar datapoints. This is where I would like to 
 If there was a shift in a specific time frame, I can focus in on what happened in that window to drive it.
 
 This leads me to my final point: data projects will always have periods of expanding and narrowing scope. You have a hunch, you chase it for a bit, it 
-either works out or you go in a different direction. Moving linearally from A to Z without repeating some letters means you probably missed something. 
-You should be in pursuit of truth, regardless of whether it confirms or dislodges your previously held beliefs. 
+either works out or you go in a different direction. Moving from A to Z without repeating some letters means you probably missed something. 
+You should be in pursuit of truth and understanding, regardless of whether it confirms or dislodges your previously held beliefs. 
 
-If you live in a massive vortex of delusion where you are right and everyone else just doesn't get it, the quality of your work will ienvtiably decline. 
-It's hard to think of an effective search for truth and understanding that didn't involve being wrong a few times along the way. 
-
-If you're afraid to have your ideas or assumptions challenged on the merits, my question is: why? 
+If you believe you are always right and everyone else just doesn't get it, the quality of your work will ienvtiably decline. Being challenged on the meri
+It's hard to think of an effective search for truth and understanding that doesn't involve being wrong a few times along the way. The pursuit of truth must remain a bedrock
+of modern human society. Institutional decay begins when truth takes a backseat to convenience. 
 
 """
 )
