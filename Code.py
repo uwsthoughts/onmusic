@@ -10,7 +10,9 @@ from io import BytesIO
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.title("My First Python Project: Understanding Beatport Music Trends")
+st.set_page_config(page_title=" Electronic Music Data Discovery", page_icon="🎧")
+
+st.title("My First Python Project: Understanding Electronic Music Characteristics")
 
 # Main text content
 st.write("""
