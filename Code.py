@@ -17,7 +17,7 @@ st.write("""
 This is my first Python project, which is focused on the discovery phase of working with a new dataset. This shows some initial ideas I had about the data and includes commentary on why it does or doesn't work. The goal is for a bit of radical 
 transparency around how I think through a new data project and what does and doesn't matter to me. As I learn more Python and start getting into machine learning and neural network components, my approach will evolve.
 
-Questions or comments about what I'm doing here? You can email me at kevin@uwsthoughts.com
+Questions or comments about what I'm doing here? You can email me at hello@uwsthoughts.com
 
 ### Why Beatport and Spotify music data? Don’t you work in advertising?
 """)
